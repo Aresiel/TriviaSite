@@ -30,3 +30,8 @@ main {
     color: white;
     font-size: 2.5rem;
 }
+
+.navbar > button:hover {
+    background-color: #373737;
+    cursor: pointer;
+}
