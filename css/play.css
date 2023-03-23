@@ -1,0 +1,20 @@
+.category-picker {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-picker > h1 {
+    font-size: 4rem;
+}
+
+.category-picker > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.category-picker > ul > li {
+    display: flex;
+    align-items: center;
+}

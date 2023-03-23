@@ -1,6 +1,6 @@
 @keyframes big-title-1-colour {
-    0% { text-shadow: 6px 6px 0 #FF1DCD, 6px 6px 16px #FF1DCD; }
-    100% { text-shadow: -6px -6px 0 #65FF87, -6px -6px 16px #65FF87; }
+    0% { text-shadow: 6px 6px 0 var(--pink), 6px 6px 16px var(--pink); }
+    100% { text-shadow: -6px -6px 0 var(--green), -6px -6px 16px var(--green); }
 }
 
 @keyframes big-title-1-transform {
@@ -10,8 +10,8 @@
 }
 
 @keyframes big-title-2-colour {
-    0% { text-shadow: -6px -6px 0 #65FF87, -6px -6px 16px #65FF87; }
-    100% { text-shadow: 6px 6px 0 #FF1DCD, 6px 6px 16px #FF1DCD; }
+    0% { text-shadow: -6px -6px 0 var(--green), -6px -6px 16px var(--green); }
+    100% { text-shadow: 6px 6px 0 var(--pink), 6px 6px 16px var(--pink); }
 }
 
 @keyframes big-title-2-transform {

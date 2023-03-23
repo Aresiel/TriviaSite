@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+:root {
+    --pink: #FF1DCD;
+    --green: #65FF87;
+    --bg: #1F1F1F;
+    --dark-gray: #414141;
+    --dark-gray-hover: #373737;
+    --gray: #545454;
+    --gray-hover: #4A4A4A;
+}
+
+* {
+    font-family: 'Varela Round', sans-serif;
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: var(--bg);
+}
+
+main {
+    height: 100%;
+    color: white;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.navbar {
+    display: flex;
+    background-color: var(--dark-gray);
+    height: 5.5rem;
+}
+
+.navbar > a {
+    width: calc(100%/3);
+    background-color: var(--dark-gray);
+    border: none;
+    border-right: 1px var(--gray) solid;
+    border-top: 1px var(--gray) solid;
+    color: white;
+    font-size: 3.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.navbar > a:hover {
+    background-color: var(--dark-gray-hover);
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.navbar > a.selected {
+    background-color: var(--dark-gray-hover);
+    cursor: pointer;
+    text-shadow: 0 0 3px white;
+}
+
+a.anim-btn {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--gray);
+    font-size: 1.8rem;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 0 16px 2px black, 4px -4px 2px 0 var(--pink), 4px -4px 16px 0 var(--pink), -4px 4px 2px 0 var(--green), -4px 4px 16px 0 var(--green);
+    transition: ease-in-out 200ms;
+}
+
+a.anim-btn:hover {
+    background-color: var(--dark-gray-hover);
+    box-shadow: 0 0 8px 2px black, 10px -10px 2px 0 var(--pink), 10px -10px 32px 0 var(--pink), -10px 10px 2px 0 var(--green), -10px 10px 32px 0 var(--green);
+}

@@ -1,7 +1,12 @@
 <!doctype html>
 <html lang="en">
 
-<?php include "includes/header.php"; ?>
+<head>
+    <?php include "includes/shared_head.php"; ?>
+    <title>Trivia Game | Home</title>
+
+    <link type="text/css" rel="stylesheet" href="/css/big-things.css">
+</head>
 
 <body>
 <main>
