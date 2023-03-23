@@ -56,7 +56,7 @@ main {
     text-decoration: none;
 }
 
-.navbar > a:hover {
+.navbar > a:hover, .navbar > a:active {
     background-color: var(--dark-gray-hover);
     cursor: pointer;
     transition: 0.1s;
@@ -78,9 +78,10 @@ a.anim-btn {
     border-radius: 16px;
     box-shadow: 0 0 16px 2px black, 4px -4px 2px 0 var(--pink), 4px -4px 16px 0 var(--pink), -4px 4px 2px 0 var(--green), -4px 4px 16px 0 var(--green);
     transition: ease-in-out 200ms;
+    user-select: none;
 }
 
-a.anim-btn:hover {
+a.anim-btn:hover, a.anim-btn:active {
     background-color: var(--dark-gray-hover);
     box-shadow: 0 0 8px 2px black, 10px -10px 2px 0 var(--pink), 10px -10px 32px 0 var(--pink), -10px 10px 2px 0 var(--green), -10px 10px 32px 0 var(--green);
 }
