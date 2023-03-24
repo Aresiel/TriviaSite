@@ -1,6 +1,7 @@
 .category-picker {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .category-picker > h1 {
@@ -8,6 +9,7 @@
 }
 
 .category-picker > ul {
+    margin: 2rem 0 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,4 +19,9 @@
 .category-picker > ul > li {
     display: flex;
     align-items: center;
+    width: 20rem;
+}
+
+.category-picker > ul > li > a {
+    width: 100%;
 }

@@ -18,27 +18,29 @@
 }
 
 html {
-    height: 100%;
+
 }
 
 body {
     display: flex;
     flex-direction: column;
-    height: 100%;
     background-color: var(--bg);
+    margin-bottom: 5.5rem;
 }
 
 main {
     height: 100%;
     color: white;
     text-align: center;
-    padding-top: 1rem;
 }
 
 .navbar {
     display: flex;
     background-color: var(--dark-gray);
     height: 5.5rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .navbar > a {
