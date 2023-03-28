@@ -1,16 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+
+:root {
+    --bg-size: 5rem;
+}
+
 .background {
     height: 300%;
     width: 300%;
     word-break: break-word;
     position: fixed;
     top: -100vh;
-    font-size: 5rem;
+    font-size: var(--bg-size);
     letter-spacing: 0.8rem;
-    transform: rotate(30deg);
     font-weight: bolder;
     z-index: -100000;
-    background-color: var(--gray);
-    color: var(--dark-gray);
-    line-height: 5rem;
+    background-color: var(--gray-hover);
+    color: var(--dark-gray-hover);
+    line-height: var(--bg-size);
     user-select: none;
+    font-family: 'Nova Mono', monospace;
+    transform: rotate(30deg);
+    animation-name: background-pan;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+
+@keyframes background-pan {
+    0% { transform: rotate(30deg) translateX(0rem) translateY(0rem) }
+    100% { transform: rotate(30deg) translateX(calc(2 * (1ch + 0.8rem))) translateY(var(--bg-size)) }
 }

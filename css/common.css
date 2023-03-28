@@ -60,6 +60,10 @@ main {
     text-decoration: none;
 }
 
+.navbar > a:nth-child(3) {
+    border-right: none;
+}
+
 .navbar > a:hover, .navbar > a:active {
     background-color: var(--dark-gray-hover);
     cursor: pointer;
