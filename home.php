@@ -9,6 +9,9 @@
 </head>
 
 <body>
+
+<?php include "includes/background.php"?>
+
 <main>
     <div class="big-title">
         <span>Trivia</span>

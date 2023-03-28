@@ -9,6 +9,9 @@
 </head>
 
 <body>
+
+<?php include "includes/background.php"?>
+
 <main>
     <div class="category-picker">
         <h1>
