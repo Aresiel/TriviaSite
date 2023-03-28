@@ -24,14 +24,15 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    background-color: var(--bg);
-    margin-bottom: 5.5rem;
+    background-color: black;
+    align-items: center;
 }
 
 main {
-    height: 100%;
+    width: 100%;
     color: white;
     text-align: center;
+    background-color: var(--bg);
 }
 
 .navbar {
@@ -86,4 +87,13 @@ a.anim-btn {
 a.anim-btn:hover, a.anim-btn:active {
     background-color: var(--dark-gray-hover);
     box-shadow: 0 0 8px 2px black, 10px -10px 2px 0 var(--pink), 10px -10px 32px 0 var(--pink), -10px 10px 2px 0 var(--green), -10px 10px 32px 0 var(--green);
+}
+
+@media (min-width: 1000px) {
+    main {
+        width: 50%;
+    }
+    .navbar {
+        width: 50%;
+    }
 }

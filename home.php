@@ -5,7 +5,7 @@
     <?php include "includes/shared_head.php"; ?>
     <title>Trivia Game | Home</title>
 
-    <link type="text/css" rel="stylesheet" href="/css/big-things.css">
+    <link type="text/css" rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>

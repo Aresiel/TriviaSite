@@ -1,7 +1,8 @@
 <?php
     $selectionMap = array(
             "/home.php" => "home",
-            "/play.php" => "game"
+            "/play.php" => "game",
+            "/game.php" => "game"
     );
     $currentSection = $selectionMap[$_SERVER['PHP_SELF']];
 ?>

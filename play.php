@@ -15,7 +15,7 @@
             Select a category
         </h1>
         <ul>
-            <li><a href="" class="anim-btn">Video Games</a></li>
+            <li><a href="/game.php?cat=13" class="anim-btn">Video Games</a></li>
             <li><a href="" class="anim-btn">Music</a></li>
             <li><a href="" class="anim-btn">Literature</a></li>
             <li><a href="" class="anim-btn">Testing test test</a></li>
