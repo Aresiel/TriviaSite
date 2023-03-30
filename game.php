@@ -13,9 +13,11 @@
 <?php include "includes/background.php"?>
 
 <main>
-    <h1>
-        Test
-    </h1>
+    <div class="question-text">Question question question question question question question question, question question question?</div>
+    <div class="question-answers">
+        <a href="">Answer 1</a> <a href="">Answer 2</a>
+        <a href="">Answer 3</a> <a href="">Answer 4</a>
+    </div>
 </main>
 
 <?php include "includes/nav.php"; ?>
