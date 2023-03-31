@@ -1,7 +1,41 @@
 .question-text {
     font-size: 3rem;
+    margin-bottom: 4rem;
 }
 
 .question-answers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    padding: 2rem;
+    justify-content: center;
+}
 
+.question-answers > a {
+    width: 80%;
+    padding: 3rem 0 3rem 0;
+}
+
+@media (min-width: 650px) {
+    .question-answers {
+        justify-content: space-evenly;
+    }
+
+    .question-answers > a {
+        width: 35%;
+    }
+}
+
+main {
+    padding-top: 2rem;
+    height: 100%;
+}
+
+body {
+    margin-bottom: 5.5rem;
+    height: 100%;
+}
+
+html {
+    height: 100%;
 }

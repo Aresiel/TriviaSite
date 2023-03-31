@@ -15,8 +15,12 @@
 <main>
     <div class="question-text">Question question question question question question question question, question question question?</div>
     <div class="question-answers">
-        <a href="">Answer 1</a> <a href="">Answer 2</a>
-        <a href="">Answer 3</a> <a href="">Answer 4</a>
+        <a href="" class="anim-btn">Answer 1</a> <a href="" class="anim-btn">Answer 2</a>
+        <a href="" class="anim-btn">Answer 3</a> <a href="" class="anim-btn">Answer 4</a>
+    </div>
+    <div class="other-buttons">
+        <a href="" class="back-btn">Switch category</a>
+        <a href="" class="skip-btn">Skip</a>
     </div>
 </main>
 
