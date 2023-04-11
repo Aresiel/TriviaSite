@@ -19,8 +19,7 @@
         <a href="" class="anim-btn">Answer 3</a> <a href="" class="anim-btn">Answer 4</a>
     </div>
     <div class="other-buttons">
-        <a href="" class="back-btn">Switch category</a>
-        <a href="" class="skip-btn">Skip</a>
+        <a href="" class="anim-btn skip-btn">Skip</a>
     </div>
 </main>
 

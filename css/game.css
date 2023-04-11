@@ -26,6 +26,22 @@
     }
 }
 
+a.skip-btn {
+    background-color: #cc3a3a;
+    box-shadow: 0 0 4px #cc3a3a;
+}
+
+a.skip-btn:hover, a.skip-btn:active {
+    background-color: #f11616;
+    box-shadow: 0 0 8px #f11616;
+}
+
+.other-buttons {
+    display: flex;
+    padding: 5rem;
+    flex-direction: row-reverse;
+}
+
 main {
     padding-top: 2rem;
     height: 100%;

@@ -1,0 +1,26 @@
+main > h1 {
+    font-size: 3rem;
+}
+
+main > form {
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 5rem 5rem 5rem;
+    align-items: center;
+}
+
+main > form > label {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+main > form > input {
+    width: 30rem;
+    font-size: 1.5rem;
+    padding: 0.2rem;
+    margin-bottom: 2rem;
+}
+
+main > form > input[type=submit] {
+    margin-top: 1rem;
+}
