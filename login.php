@@ -14,12 +14,12 @@
 
 <main>
     <h1>Login / Register</h1>
-    <form>
+    <form action="forms/mergedlogin.php" method="post" autocomplete="on">
         <label for="usernameInput">Username</label><input type="text" name="username" id="usernameInput" required maxlength="32">
         <label for="emailInput">Email</label><input type="email" name="email" id="emailInput" required maxlength="512">
         <label for="passwordInput">Password</label><input type="password" name="password" id="passwordInput" required>
         <label for="password_confirmInput">Confirm password</label><input type="password" name="password_confirm" id="password_confirmInput" required>
-        <input type="submit" class="anim-btn">
+        <input type="submit" class="anim-btn" value="Register / Login">
     </form>
 </main>
 
