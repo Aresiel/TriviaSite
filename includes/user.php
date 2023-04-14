@@ -41,4 +41,25 @@ class User {
         $userCount = $data[0];
         return $userCount > 0;
     }
+
+    public static function registerUser(string $username, string $email, string $password): User {
+
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+        $conn = Database::getConn();
+        //TODO: Implement the rest
+
+    }
+
+    public static function validUsername(string $username): bool {
+        return !(preg_match("/^[a-zA-Z0-9_]{4,32}$/", $username) == false);
+    }
+
+    public static function validEmail(string $email): bool {
+        return !(preg_match("/@/", $email) == false) && (strlen($email) < 256);
+    }
+
+    public static function validPassword(string $password): bool {
+        return !(preg_match("/^.{8,256}$/", $password) == false);
+    }
 }

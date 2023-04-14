@@ -13,13 +13,15 @@
 <?php include "includes/background.php" ?>
 
 <main>
-    <h1>Login</h1>
-    <h2>Don't have an account? <a href="register.php">Register</a></h2>
+    <h1>Register</h1>
+    <h2>Already have an account? <a href="login.php">Login</a></h2>
     <form action="forms/mergedlogin.php" method="post" autocomplete="on">
+        <label for="usernameInput">Username</label><input type="text" name="username" id="usernameInput" required maxlength="32" minlength="4">
         <label for="emailInput">Email</label><input type="email" name="email" id="emailInput" required maxlength="512">
         <label for="passwordInput">Password</label><input type="password" name="password" id="passwordInput" required>
-        <input type="hidden" name="type" value="login">
-        <input type="submit" class="anim-btn" value="Login">
+        <label for="password_confirmInput">Confirm password</label><input type="password" name="password_confirm" id="password_confirmInput" required>
+        <input type="hidden" name="type" value="register">
+        <input type="submit" class="anim-btn" value="Register">
     </form>
 </main>
 
