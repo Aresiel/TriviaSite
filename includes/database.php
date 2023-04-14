@@ -1,7 +1,7 @@
 <?php
 class Database
 {
-    private static $conn;
+    private static mysqli $conn;
     private static string $serverName = "localhost";
     private static string $dbUsername = "triviasite";
     private static string $dbPassword = "";
