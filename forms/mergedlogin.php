@@ -6,7 +6,30 @@ require_once '../includes/user.php';
 $db = Database::getConn();
 
 if($_POST['type'] == "login") {
-    echo "login";
+
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    if(!User::validEmail($email)) {
+        header('Location: /login.php?error=invalidEmail');
+        exit();
+    } elseif(!User::validPassword($password)) {
+        header('Location: /login.php?error=invalidPassword');
+        exit();
+    }
+
+    $user = User::loginUser($email, $password);
+
+    if($user == false){
+        header('Location: /login.php?error=invalidCredentials');
+        exit();
+    }
+
+    $_SESSION['user'] = $user;
+    header('Location: /account.php');
+    exit();
+
+
 } elseif($_POST['type'] == "register") {
 
     $username = trim($_POST['username']);
@@ -31,8 +54,8 @@ if($_POST['type'] == "login") {
         exit();
     }
 
-    $newUser = User::registerUser($username, $email, $password);
-    var_dump($newUser);
+    $_SESSION['user'] = User::registerUser($username, $email, $password);;
+    header("Location: /account.php");
 } else {
     echo "Invalid type";
 }

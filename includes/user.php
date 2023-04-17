@@ -61,14 +61,19 @@ class User
         return $user;
     }
 
-    public static function getUserByEmail(string $email): User
+    public static function loginUser(string $email, string $password): User | false
     {
         $conn = Database::getConn();
-        $getUserStatement = $conn->prepare("SELECT username, email, id, total_answers, correct_answers, answered_questions FROM users WHERE email = ?");
+        $getUserStatement = $conn->prepare("SELECT username, password, email, id, total_answers, correct_answers, answered_questions FROM users WHERE email = ?");
         $getUserStatement->bind_param("s", $email);
         $getUserStatement->execute();
         $result = $getUserStatement->get_result();
         $data = $result->fetch_assoc();
+
+        if (!password_verify($password, $data['password'])){
+            return false;
+        }
+
         $user = new User($data['username'], $data['id'], $data['email'], $data['total_answers'], $data['correct_answers'], $data['answered_questions']);
         $getUserStatement->close();
 
