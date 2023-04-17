@@ -15,6 +15,7 @@
 <main>
     <h1>Login</h1>
     <h2>Don't have an account? <a href="register.php">Register</a></h2>
+    <?php include "includes/mergedloginError.php" ?>
     <form action="forms/mergedlogin.php" method="post" autocomplete="on">
         <label for="emailInput">Email</label><input type="email" name="email" id="emailInput" required maxlength="512">
         <label for="passwordInput">Password</label><input type="password" name="password" id="passwordInput" required>
