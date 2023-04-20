@@ -19,7 +19,7 @@
 .category-picker > ul > li {
     display: flex;
     align-items: center;
-    width: 20rem;
+    width: min(30rem, 90vw);
 }
 
 .category-picker > ul > li > a {

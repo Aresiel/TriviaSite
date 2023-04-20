@@ -39,7 +39,8 @@ a.skip-btn:hover, a.skip-btn:active {
 .other-buttons {
     display: flex;
     padding: 5rem;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 main {
@@ -48,10 +49,50 @@ main {
 }
 
 body {
-    margin-bottom: 5.5rem;
     height: 100%;
 }
 
 html {
     height: 100%;
+}
+
+.previous-answer-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes notification-hide {
+    0% { transform: translateY(-100%) }
+    99% { transform: translateY(1000%); opacity: 1}
+    100% { transform: translateY(1000%); opacity: 0}
+}
+
+.previous-answer-notification {
+    position: fixed;
+    color: white;
+    text-decoration: none;
+    font-size: 3rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    transition: ease-in-out 200ms;
+    user-select: none;
+    border: none;
+    transform: translateY(-100%);
+
+    animation-name: notification-hide;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.previous-answer-notification.red {
+    background-color: #cc3a3a;
+    box-shadow: 0 0 4px #cc3a3a;
+}
+
+.previous-answer-notification.green {
+    background-color: lime;
+    box-shadow: 0 0 4px lime;
 }

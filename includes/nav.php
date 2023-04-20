@@ -5,7 +5,8 @@
             "/game.php" => "game",
             "/register.php" => "user",
             "/login.php" => "user",
-            "/account.php" => "user"
+            "/account.php" => "user",
+            "/leaderboard.php" => "user"
     );
     $currentSection = $selectionMap[$_SERVER['PHP_SELF']];
 

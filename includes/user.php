@@ -9,16 +9,14 @@ class User
     public string $email;
     public int $total_answers;
     public int $correct_answers;
-    public string $answered_questions;
 
-    private function __construct(string $username, int $id, string $email, int $total_answers, int $correct_answers, string $answered_questions)
+    private function __construct(string $username, int $id, string $email, int $total_answers, int $correct_answers)
     {
         $this->username = $username;
         $this->id = $id;
         $this->email = $email;
         $this->total_answers = $total_answers;
         $this->correct_answers = $correct_answers;
-        $this->answered_questions = $answered_questions;
     }
 
 
@@ -50,12 +48,12 @@ class User
     public static function getUserById(int $id): User
     {
         $conn = Database::getConn();
-        $getUserStatement = $conn->prepare("SELECT username, email, id, total_answers, correct_answers, answered_questions FROM users WHERE id = ?");
+        $getUserStatement = $conn->prepare("SELECT username, email, id, total_answers, correct_answers FROM users WHERE id = ?");
         $getUserStatement->bind_param("i", $id);
         $getUserStatement->execute();
         $result = $getUserStatement->get_result();
         $data = $result->fetch_assoc();
-        $user = new User($data['username'], $data['id'], $data['email'], $data['total_answers'], $data['correct_answers'], $data['answered_questions']);
+        $user = new User($data['username'], $data['id'], $data['email'], $data['total_answers'], $data['correct_answers']);
         $getUserStatement->close();
 
         return $user;
@@ -64,7 +62,7 @@ class User
     public static function loginUser(string $email, string $password): User | false
     {
         $conn = Database::getConn();
-        $getUserStatement = $conn->prepare("SELECT username, password, email, id, total_answers, correct_answers, answered_questions FROM users WHERE email = ?");
+        $getUserStatement = $conn->prepare("SELECT username, password, email, id, total_answers, correct_answers FROM users WHERE email = ?");
         $getUserStatement->bind_param("s", $email);
         $getUserStatement->execute();
         $result = $getUserStatement->get_result();
@@ -74,7 +72,7 @@ class User
             return false;
         }
 
-        $user = new User($data['username'], $data['id'], $data['email'], $data['total_answers'], $data['correct_answers'], $data['answered_questions']);
+        $user = new User($data['username'], $data['id'], $data['email'], $data['total_answers'], $data['correct_answers']);
         $getUserStatement->close();
 
         return $user;
@@ -93,6 +91,22 @@ class User
 
         return self::getUserById($user_id);
 
+    }
+
+    public function updateQuestions(bool $correct): void {
+
+        $correct_increment = (int)$correct; // This is required as "only variables may be passed as reference" in bind_param, and apparently (int)$correct isn't a variable (due to the type casting) and hence cannot be put there
+
+        $conn = Database::getConn();
+        $updateStatement = $conn->prepare("UPDATE users SET total_answers = total_answers + 1, correct_answers = correct_answers + ? WHERE id = ?");
+        $updateStatement->bind_param("ii", $correct_increment, $this->id);
+        $updateStatement->execute();
+        $updateStatement->close();
+    }
+
+    public function updateSession(): void {
+        $user = $this::getUserById($this->id);
+        $_SESSION['user'] = $user->serializeUser();
     }
 
     public static function validUsername(string $username): bool
@@ -117,6 +131,6 @@ class User
 
     public static function unserializeUser(string $serializedUser): User {
         $userObj = unserialize($serializedUser);
-        return new User($userObj->username, $userObj->id, $userObj->email, $userObj->total_answers, $userObj->correct_answers, $userObj->answered_questions);
+        return new User($userObj->username, $userObj->id, $userObj->email, $userObj->total_answers, $userObj->correct_answers);
 }
 }

@@ -18,19 +18,13 @@
             Select a category
         </h1>
         <ul>
-            <li><a href="/game.php?cat=13" class="anim-btn">Video Games</a></li>
-            <li><a href="" class="anim-btn">Music</a></li>
-            <li><a href="" class="anim-btn">Literature</a></li>
-            <li><a href="" class="anim-btn">Testing test test</a></li>
-            <li><a href="" class="anim-btn">Testing test test</a></li>
-            <li><a href="" class="anim-btn">Testing test test twice thrice oh wait what is the word</a></li>
-            <li><a href="" class="anim-btn">Testing test test</a></li>
-            <li><a href="" class="anim-btn">Testing test test</a></li>
-            <li><a href="" class="anim-btn">Testing test test</a></li>
-            <li><a href="" class="anim-btn">Testing test test</a></li>
-            <li><a href="" class="anim-btn">Testing test test</a></li>
-            <li><a href="" class="anim-btn">Testing test test</a></li>
-            <li><a href="" class="anim-btn">Last one</a></li>
+            <?php
+            $categories_list = file_get_contents("https://opentdb.com/api_category.php");
+            $categories_json = json_decode($categories_list, true);
+            foreach ($categories_json['trivia_categories'] as $category){
+                echo "<li><a href=\"/game.php?cat=" . $category['id'] . "&cat_name=" . urlencode($category['name']) . "\" class=\"anim-btn\">" . $category['name'] . "</a></li>";
+            }
+            ?>
         </ul>
     </div>
 </main>

@@ -76,6 +76,44 @@ main {
     text-shadow: 0 0 3px white;
 }
 
+.btn {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--gray);
+    font-size: 1.8rem;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 0 4px 2px var(--gray);
+    transition: ease-in-out 200ms;
+    user-select: none;
+    border: none;
+}
+
+.btn:hover, .btn:active {
+    background-color: var(--dark-gray-hover);
+    box-shadow: 0 0 4px 2px var(--dark-gray-hover);
+}
+
+.red-btn {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem;
+    border-radius: 16px;
+    transition: ease-in-out 200ms;
+    user-select: none;
+    border: none;
+    background-color: #cc3a3a;
+    box-shadow: 0 0 4px #cc3a3a;
+}
+
+.red-btn:hover, .red-btn:active {
+    background-color: #f11616;
+    box-shadow: 0 0 8px #f11616;
+}
+
 .anim-btn {
     color: white;
     cursor: pointer;
