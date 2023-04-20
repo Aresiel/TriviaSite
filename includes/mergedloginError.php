@@ -7,6 +7,7 @@ if(isset($_GET["error"])) {
         "invalidPassword" => "Invalid password. Password must be between 8 and 256 characters.",
         "passwordMismatch" => "Password and password confirmation do not match.",
         "accountExists" => "An account by this email already exists.",
+        "invalidCredentials" => "Incorrect email or password.",
         default => "Unknown error"
     };
 

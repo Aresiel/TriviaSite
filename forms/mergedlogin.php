@@ -20,12 +20,12 @@ if($_POST['type'] == "login") {
 
     $user = User::loginUser($email, $password);
 
-    if($user == false){
+    if(!$user){
         header('Location: /login.php?error=invalidCredentials');
         exit();
     }
 
-    $_SESSION['user'] = $user;
+    $_SESSION['user'] = $user->serializeUser();
     header('Location: /account.php');
     exit();
 
@@ -54,7 +54,7 @@ if($_POST['type'] == "login") {
         exit();
     }
 
-    $_SESSION['user'] = User::registerUser($username, $email, $password);;
+    $_SESSION['user'] = User::registerUser($username, $email, $password)->serializeUser();
     header("Location: /account.php");
 } else {
     echo "Invalid type";

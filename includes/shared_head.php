@@ -1,6 +1,6 @@
 <?php
     if (session_status() == PHP_SESSION_NONE) {
-        session_start();
+        //session_start();
     } elseif (session_status() == PHP_SESSION_DISABLED) {
         die("Session support is disabled. This functionality is required for this website to work.");
     }

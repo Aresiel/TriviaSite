@@ -4,12 +4,12 @@ require_once "database.php";
 
 class User
 {
-    private string $username;
-    private int $id;
-    private string $email;
-    private int $total_answers;
-    private int $correct_answers;
-    private string $answered_questions;
+    public string $username;
+    public int $id;
+    public string $email;
+    public int $total_answers;
+    public int $correct_answers;
+    public string $answered_questions;
 
     private function __construct(string $username, int $id, string $email, int $total_answers, int $correct_answers, string $answered_questions)
     {
@@ -95,7 +95,6 @@ class User
 
     }
 
-
     public static function validUsername(string $username): bool
     {
         return !(preg_match("/^[a-zA-Z0-9_]{4,32}$/", $username) == false);
@@ -111,4 +110,13 @@ class User
     {
         return !(preg_match("/^.{8,256}$/", $password) == false);
     }
+
+    public function serializeUser(): string {
+        return serialize($this);
+    }
+
+    public static function unserializeUser(string $serializedUser): User {
+        $userObj = unserialize($serializedUser);
+        return new User($userObj->username, $userObj->id, $userObj->email, $userObj->total_answers, $userObj->correct_answers, $userObj->answered_questions);
+}
 }
