@@ -19,7 +19,7 @@
     </div>
 
     <div class="big-play">
-        <a href="/play.php" class="fa fa-play" aria-hidden="true"></a>
+        <a href="/categories.php" class="fa fa-play" aria-hidden="true"></a>
     </div>
 </main>
 

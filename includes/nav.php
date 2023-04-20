@@ -1,7 +1,7 @@
 <?php
     $selectionMap = array(
             "/home.php" => "home",
-            "/play.php" => "game",
+            "/categories.php" => "game",
             "/game.php" => "game",
             "/register.php" => "user",
             "/login.php" => "user",
@@ -22,6 +22,6 @@
 
 <nav class="navbar">
     <a <?php if (!$homeSelected) echo "href=\"/home.php\""; ?> class="<?php if ($homeSelected) echo "selected"; ?>"><i class="fa fa-home" aria-hidden="true"></i></a>
-    <a <?php if (!$playSelected) echo "href=\"/play.php\""; ?> class="<?php if ($playSelected) echo "selected"; ?>"><i class="fa fa-play" aria-hidden="true"></i></a>
+    <a <?php if (!$playSelected) echo "href=\"/categories.php\""; ?> class="<?php if ($playSelected) echo "selected"; ?>"><i class="fa fa-play" aria-hidden="true"></i></a>
     <a  <?php if (!$userSelected) echo "href=\"" . $login_url . "\""; ?> class="<?php if ($userSelected) echo "selected"; ?>"><i class="fa fa-user" aria-hidden="true"></i></a>
 </nav>

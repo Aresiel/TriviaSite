@@ -2,4 +2,104 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-top: 3rem;
+    align-items: center;
+}
+
+html, body, main {
+    height: 100%;
+}
+
+
+@keyframes left-num-colour {
+    0% { text-shadow: 6px 6px 0 var(--pink), 6px 6px 16px var(--pink); }
+    100% { text-shadow: -6px -6px 0 var(--green), -6px -6px 16px var(--green); }
+}
+
+@keyframes left-num-transform {
+    0% { transform: rotateZ(5deg) translateY(0); }
+    50% { transform: rotateZ(0deg) translateY(10%) }
+    100% { transform: rotateZ(-5deg) translateY(0); }
+}
+
+@keyframes right-num-colour {
+    0% { text-shadow: -6px -6px 0 var(--green), -6px -6px 16px var(--green); }
+    100% { text-shadow: 6px 6px 0 var(--pink), 6px 6px 16px var(--pink); }
+}
+
+@keyframes right-num-transform {
+    0% { transform: rotateZ(-5deg) translateY(0); }
+    50% { transform: rotateZ(0deg) translateY(-10%) }
+    100% { transform: rotateZ(5deg) translateY(0); }
+}
+
+@keyframes divider-colour {
+    0% { text-shadow: -3px -3px 0 var(--pink), -3px -3px 8px var(--pink), 3px 3px 0 var(--green), 3px 3px 8px var(--green);}
+    100% { text-shadow: 3px 3px 0 var(--pink), 3px 3px 8px var(--pink), -3px -3px 0 var(--green), -3px -3px 8px var(--green); }
+}
+
+@keyframes divider-transform {
+    0% { transform: rotateZ(-2deg) translateY(-5%); }
+    50% { transform: rotateZ(0deg) translateY(0%) }
+    100% { transform: rotateZ(2deg) translateY(5%); }
+}
+
+.question-answers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    color: white;
+    flex-direction: row;
+    font-weight: bolder;
+    user-select: none;
+}
+
+.question-answers > span:nth-child(1) {
+    animation-name: left-num-colour, left-num-transform;
+    animation-duration: 5s, 15s;
+    animation-iteration-count: infinite, infinite;
+    animation-direction: alternate, alternate;
+    animation-timing-function: ease-in-out, linear;
+}
+
+.question-answers > span:nth-child(2) {
+    font-size: 12rem;
+    font-weight: lighter;
+    animation-name: divider-colour, divider-transform;
+    animation-duration: 5s, 15s;
+    animation-iteration-count: infinite, infinite;
+    animation-direction: alternate, alternate;
+    animation-timing-function: ease-in-out, linear;
+}
+
+.question-answers > span:nth-child(3) {
+    animation-name: right-num-colour, right-num-transform;
+    animation-duration: 5s, 15s;
+    animation-iteration-count: infinite, infinite;
+    animation-direction: alternate, alternate;
+    animation-timing-function: ease-in-out, linear;
+}
+
+.question-percent {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+}
+
+.username, .email {
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
+.email > span {
+    filter: blur(8px);
+}
+
+.email:hover > span {
+    filter: none;
+}
+
+.btn, .red-btn {
+    margin: 2rem;
+    width: 20rem;
 }

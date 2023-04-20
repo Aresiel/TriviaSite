@@ -16,15 +16,26 @@
 
 <main>
     <h1>Your account</h1>
-    <h2>Username: <input value="<?php echo $user->username ?>"></input></h2>
-    <h2 class="email">Email: <?php echo $user->email ?></h2>
-    <p>Questions correct: <?php
-            if ($user->total_answers == 0) {
-                echo "N/A";
-            } else {
-                echo $user->correct_answers . "/" . $user->total_answers;
-            }
-        ?> </p>
+    <div class="question-answers"><?php
+        if ($user->total_answers == 0) {
+            echo "<span>N</span><span>/</span><span>A</span>";
+        } else {
+            echo "<span>" . $user->correct_answers . "</span><span>/</span><span>" . $user->total_answers . "</span>";
+        }
+        ?> </div>
+    <div class="question-percent">≈ <?php
+        if ($user->total_answers == 0){
+            echo "0% correct";
+        } else {
+            echo round(100*$user->correct_answers/$user->total_answers) . "% correct";
+        }
+        ?></div>
+    <h2 class="username"><?php echo $user->username ?></h2>
+    <h2 class="email">Email: <span><?php echo $user->email ?></span></h2>
+
+    <a href="/leaderboard.php" class="btn">View leaderboard</a>
+    <a href="/forms/logout.php" class="red-btn">Logout</a>
+
 </main>
 
 <?php include "includes/nav.php"; ?>
