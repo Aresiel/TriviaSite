@@ -18,8 +18,8 @@
     padding: 0;
 }
 
-html {
-
+html, body, main {
+    min-height: 100%;
 }
 
 body {

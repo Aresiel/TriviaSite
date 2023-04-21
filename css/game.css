@@ -1,6 +1,6 @@
 .question-text {
     font-size: 3rem;
-    margin-bottom: 4rem;
+    margin: 0 2rem 4rem 2rem;
 }
 
 .question-answers {
@@ -38,22 +38,17 @@ a.skip-btn:hover, a.skip-btn:active {
 
 .other-buttons {
     display: flex;
-    padding: 5rem;
+    padding: 5rem 5rem 10rem;
     flex-direction: row;
     justify-content: space-between;
 }
 
 main {
     padding-top: 2rem;
-    height: 100%;
 }
 
-body {
-    height: 100%;
-}
-
-html {
-    height: 100%;
+html, body, main {
+    min-height: 100%;
 }
 
 .previous-answer-wrapper {
@@ -69,6 +64,7 @@ html {
 
 .previous-answer-notification {
     position: fixed;
+    bottom: 6rem;
     color: white;
     text-decoration: none;
     font-size: 3rem;
