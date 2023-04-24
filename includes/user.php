@@ -130,7 +130,7 @@ class User
     }
 
     public static function unserializeUser(string $serializedUser): User {
-        $userObj = unserialize($serializedUser);
+        $userObj = unserialize($serializedUser); // Needed to store in $_SESSION since auto init session prevents the class from being loaded at session init
         return new User($userObj->username, $userObj->id, $userObj->email, $userObj->total_answers, $userObj->correct_answers);
 }
 }

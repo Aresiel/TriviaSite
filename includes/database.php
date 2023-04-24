@@ -7,8 +7,6 @@ class Database
     private static string $dbPassword = "";
     private static string $dbName = "triviasite";
 
-    public final function __construct(){}
-
     public static function getConn(): mysqli {
         if(!isset(self::$conn))
         {
